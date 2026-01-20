@@ -1,3 +1,17 @@
+def can(d, p): #returns can(d, p) where d in a Dyck path of semilength n and p is a permutation of size n
+    n = len(p)
+    counter1 = 0
+    counter0 = 0
+    c = []
+    for i in range(2*n):
+        if d[i] == 1:
+            c.append(p[counter1])
+            counter1 += 1
+        if d[i] == 0:
+            c.append(p[counter0])
+            counter0 += 1
+    return c
+
 def is_contained(d1, d2): #return True if the Dyck path d1 is contained in the Dyck path d2
     n = d1.semilength()
     if d2.semilength() != n:
@@ -15,7 +29,7 @@ def vperm(d): #returns the permutation vperm d for any Dyck path d
     n = d.semilength()
     p = Permutation([n - i for i in range(n)])
     while b != d:
-        c = canon(p, b)
+        c = can(b, p)
         for k in range(2*n):
             if b[k] == 0 and b[k + 1] == 1:
                 bnew = list(b)
