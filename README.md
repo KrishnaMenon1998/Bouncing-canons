@@ -1,4 +1,4 @@
-Both files contain SageMath code to implement algorithms defined in the paper: How to bounce your canon permutation.
+Both files contain SageMath code to implement algorithms defined in the paper: [How to bounce your canon permutation](http://arxiv.org/abs/2603.22565).
 
 ## bperm.md
 This file has one function 'bperm' which takes a single argument of type DyckWord and returns a Permutation. 
